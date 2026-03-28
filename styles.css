@@ -1,0 +1,361 @@
+/* Remove default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background - dark space colour */
+body {
+  background-color: #0a0e1a;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+/* ── STARS BACKGROUND ───────────────────── */
+/* Small dots using CSS to look like stars */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 150px 150px, 250px 250px;
+  background-position: 0 0, 75px 75px;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Everything sits on top of the star background */
+nav, main, footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── NAVIGATION BAR ─────────────────────── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo text */
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+/* Navigation links list */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+/* Each nav link */
+.nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+/* Nav link hover effect */
+.nav-links a:hover {
+  color: #00d4ff;
+}
+
+/* ── MAIN CONTENT AREA ──────────────────── */
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  gap: 40px;
+}
+
+/* Left side - text content */
+.text-side {
+  max-width: 500px;
+}
+
+/* Small label above 404 */
+.zone-label {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+/* The big ERROR 404 heading */
+.error-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1;
+  color: white;
+  margin-bottom: 16px;
+
+  /* Glowing text effect */
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+
+  /* Fade-in animation */
+  animation: fadeIn 1s ease;
+}
+
+/* Subtitle */
+.error-subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Description paragraph */
+.error-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 36px;
+}
+
+/* The Return To Earth button */
+.btn {
+  display: inline-block;
+  background-color: #00d4ff;
+  color: #0a0e1a;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover */
+.btn:hover {
+  background-color: #ff6b35;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Right side - space scene */
+.image-side {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  flex-shrink: 0;
+}
+
+/* ── PLANET ─────────────────────────────── */
+.planet {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+
+  /* Planet colour with shading */
+  background: radial-gradient(circle at 35% 30%, #1e3a6e, #0d1f3c, #060d1f);
+
+  /* Glow around the planet */
+  box-shadow: 0 0 50px rgba(0, 100, 200, 0.3);
+
+  /* Centred in the image box */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── ORBIT RING ──────────────────────────── */
+/* The ring that goes around the planet */
+.orbit-ring {
+  width: 320px;
+  height: 70px;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(70deg);
+
+  /* Spinning animation */
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+}
+
+/* ── ASTRONAUT ───────────────────────────── */
+.astronaut {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+
+  /* Floating up-down animation */
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+
+/* ── SMALL UFO ───────────────────────────── */
+.ufo-group {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+
+  /* UFO drifting animation */
+  animation: drift 5s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(10px, -12px); }
+}
+
+/* UFO saucer body */
+.ufo-body {
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(180deg, #7ee8fa, #2ab8d8);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+}
+
+/* UFO dome on top */
+.ufo-dome {
+  width: 28px;
+  height: 16px;
+  background: rgba(200, 240, 255, 0.8);
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── SMALL PLANETS ───────────────────────── */
+.planet-red {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e05c4a, #7a1e10);
+  box-shadow: 0 0 16px rgba(200, 60, 40, 0.4);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  animation: float 6s ease-in-out infinite;
+}
+
+.planet-yellow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f0c060, #b06820);
+  box-shadow: 0 0 10px rgba(220, 160, 60, 0.4);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  animation: float 7s ease-in-out infinite reverse;
+}
+
+/* ── FADE-IN ANIMATION ───────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply fade-in to text elements */
+.zone-label        { animation: fadeIn 0.6s 0.1s ease both; }
+.error-heading     { animation: fadeIn 0.6s 0.25s ease both; }
+.error-subtitle    { animation: fadeIn 0.6s 0.4s ease both; }
+.error-description { animation: fadeIn 0.6s 0.55s ease both; }
+.btn               { animation: fadeIn 0.6s 0.7s ease both; }
+
+/* ── RESPONSIVE - TABLET ─────────────────── */
+@media (max-width: 860px) {
+  nav {
+    padding: 16px 30px;
+  }
+
+  main {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 30px;
+  }
+
+  .text-side {
+    max-width: 100%;
+  }
+
+  .error-heading {
+    font-size: 70px;
+  }
+
+  .image-side {
+    width: 300px;
+    height: 300px;
+  }
+
+  .planet {
+    width: 160px;
+    height: 160px;
+  }
+
+  .orbit-ring {
+    width: 230px;
+    height: 52px;
+  }
+}
+
+/* ── RESPONSIVE - MOBILE ─────────────────── */
+@media (max-width: 500px) {
+  .nav-links {
+    display: none;
+  }
+
+  .error-heading {
+    font-size: 52px;
+  }
+
+  .image-side {
+    width: 240px;
+    height: 240px;
+  }
+
+  .planet {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orbit-ring {
+    width: 180px;
+    height: 40px;
+  }
+
+  .astronaut {
+    width: 70px;
+  }
+}

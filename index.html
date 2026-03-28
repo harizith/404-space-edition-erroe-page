@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Space Edition</title>
+
+  <!-- Google Font for a space look -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ── NAVIGATION BAR ──────────────────────── -->
+  <nav>
+    <a href="#" class="logo">XCOMPANY</a>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Community</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ── MAIN CONTENT ────────────────────────── -->
+  <main>
+
+    <!-- Left: Text -->
+    <div class="text-side">
+      <p class="zone-label">Unknown Zone</p>
+
+      <h1 class="error-heading">ERROR<br>404</h1>
+
+      <h2 class="error-subtitle">Page Not Found</h2>
+
+      <p class="error-description">
+        We can't seem to find the page you're looking for.
+        It seems you've drifted too far into space. <br>
+        You need to come back to Earth.
+      </p>
+
+      <a href="#" class="btn">Return To Earth</a>
+    </div>
+
+    <!-- Right: Space Scene -->
+    <div class="image-side">
+
+      <!-- Small red planet top-left -->
+      <div class="planet-red" aria-hidden="true"></div>
+
+      <!-- The main big planet -->
+      <div class="planet" aria-hidden="true">
+        <!-- Orbit ring goes around the planet -->
+        <div class="orbit-ring" aria-hidden="true"></div>
+      </div>
+
+      <!-- Floating astronaut (drawn with SVG shapes) -->
+      <svg class="astronaut" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-label="Floating astronaut">
+        <!-- Body -->
+        <ellipse cx="50" cy="90" rx="27" ry="32" fill="#dce8f5"/>
+        <!-- Helmet -->
+        <circle cx="50" cy="46" r="25" fill="#c0d4e8"/>
+        <!-- Visor (dark glass) -->
+        <ellipse cx="50" cy="47" rx="15" ry="13" fill="#0d2a4a" opacity="0.85"/>
+        <!-- Visor shine -->
+        <ellipse cx="44" cy="41" rx="5" ry="3" fill="rgba(255,255,255,0.2)" transform="rotate(-20 44 41)"/>
+        <!-- Helmet outline ring -->
+        <circle cx="50" cy="46" r="25" fill="none" stroke="#a0b8cc" stroke-width="2"/>
+        <!-- Left arm -->
+        <ellipse cx="21" cy="88" rx="9" ry="17" fill="#c8d8ea" transform="rotate(12 21 88)"/>
+        <!-- Right arm -->
+        <ellipse cx="79" cy="88" rx="9" ry="17" fill="#c8d8ea" transform="rotate(-12 79 88)"/>
+        <!-- Left boot -->
+        <ellipse cx="35" cy="126" rx="12" ry="7" fill="#8aa0b8"/>
+        <!-- Right boot -->
+        <ellipse cx="65" cy="126" rx="12" ry="7" fill="#8aa0b8"/>
+        <!-- Chest panel -->
+        <rect x="42" y="78" width="16" height="10" rx="3" fill="#a8bcd0"/>
+        <!-- Blinking visor light -->
+        <circle cx="50" cy="46" r="3.5" fill="#00d4ff" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+
+      <!-- Small UFO bottom-left -->
+      <div class="ufo-group" aria-hidden="true">
+        <div class="ufo-dome"></div>
+        <div class="ufo-body"></div>
+      </div>
+
+      <!-- Small yellow planet bottom-right -->
+      <div class="planet-yellow" aria-hidden="true"></div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
